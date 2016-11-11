@@ -1,0 +1,10 @@
+%html
+  %head
+  %body
+    %h1 Posts list
+    - @post.each do |post|
+      %h3
+        = post.title
+      %p
+        = post.content
+      %hr

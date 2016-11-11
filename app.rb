@@ -1,17 +1,6 @@
 # app.rb
-Dir[File.join(File.dirname(__FILE__), 'lib', '*.rb')].each do |file|
-  require file
-end
-Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each do |file|
-  require file
-end
-
 require 'yaml'
-ROUTES = YAML.load(
-  File.read(File.join(File.dirname(__FILE__), 'app', 'routes.yml'))
-)
-
-require './lib/router'
+require './lib/boot.rb'
 
 # App class
 class App
