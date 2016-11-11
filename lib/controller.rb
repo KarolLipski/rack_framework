@@ -30,6 +30,8 @@ class Controller
   end
 
   def template
-    Slim::Template.new(File.join(App.root,'app','views',"#{self.name}", "#{self.action}.slim"))
+    # Slim::Template.new(File.join(App.root,'app','views',"#{self.name}", "#{self.action}.slim"))
+    template = File.read(File.join(App.root, 'app', 'views', "#{self.name}", "#{self.action}.haml"))
+    Haml::Engine.new(template)
   end
 end
